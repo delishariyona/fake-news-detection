@@ -1,11 +1,11 @@
-# 📰 Fake News Detection using NLP
+#Fake News Detection using NLP
 
 This project detects **fake news articles** using **Natural Language Processing (NLP)** and **Machine Learning** models.  
 We use the **LIAR-style dataset** (`Fake.csv` + `True.csv`) to train and evaluate models that classify news as *real* or *fake*.
 
 ---
 
-## 🚀 Models Implemented
+## Models Implemented
 
 We compare and evaluate three ML models:
 
@@ -15,7 +15,7 @@ We compare and evaluate three ML models:
 
 ---
 
-## ⚙️ Setup Instructions
+## Setup Instructions
 
 ### 1. Clone the repository
 ```bash
