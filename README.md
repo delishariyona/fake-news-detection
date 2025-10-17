@@ -47,7 +47,7 @@ The data is merged, shuffled, cleaned, and split into training and testing subse
 
 ##  Setup Instructions 
 
-Follow these steps to set up and run the project 
+Follow these steps to set up and run the project , upload the zip file of datset in the collab notebook
 
 it is a collab notebook in the fake news folder named FAKE_NEWS_DETECTION.ipynb 
 
