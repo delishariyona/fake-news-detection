@@ -10,9 +10,9 @@ By combining traditional machine learning with deep learning architectures, this
 ##  Overview
 
 The project involves:
-- Cleaning and preprocessing raw news text using **NLTK**
-- Converting text into numerical form using **TF–IDF Vectorization** and **Word Embeddings**
-- Training and evaluating **five distinct classification models**
+- Cleaning and preprocessing raw news text using NLTK
+- Converting text into numerical form using TF–IDF Vectorization and Word Embeddings
+- Training and evaluating using Logistic Regression and LSTM 
 - Measuring performance using accuracy, precision, recall, and F1-score
 
 ---
@@ -21,11 +21,17 @@ The project involves:
 
 This project evaluates five classification models:
 
-1. **Logistic Regression** – a baseline linear classifier  
-2. **Naive Bayes** – probabilistic model suitable for text data  
-3. **Passive Aggressive Classifier** – optimized for online learning  
-4. **Convolutional Neural Network (CNN)** – deep learning model capturing spatial text patterns  
-5. **Long Short-Term Memory (LSTM)** – recurrent neural network (RNN) capturing contextual dependencies in sequences  
+1. **Logistic Regression** – a baseline linear classifier
+It takes TF-IDF features (numerical representations of text based on word importance).
+Each word feature is given a weight that shows how strongly it contributes to predicting the positive class.
+It calculates a weighted sum of all features and passes it through a sigmoid function
+If the probability ≥ 0.5 → class 1 (malicious), else class 0 (safe).
+3. **Long Short-Term Memory (LSTM)**
+Embedding Layer — Converts each word into a numerical vector capturing its meaning.
+LSTM Layer — Reads the sequence of words, remembering context and relationships (e.g., “not attack”).
+Dense Layer (ReLU) — Learns deeper patterns and combinations of features.
+Dropout Layer — Prevents overfitting by randomly turning off neurons during training.
+Output Layer (Sigmoid) — Produces a probability between 0 and 1, indicating the final prediction.
 
 ---
 
@@ -41,40 +47,14 @@ The data is merged, shuffled, cleaned, and split into training and testing subse
 
 ##  Setup Instructions 
 
-Follow these steps to set up and run the project �
+Follow these steps to set up and run the project 
 
-```bash
-#  Clone the repository
-git clone https://github.com/<your-username>/fake-news-detection.git
-cd fake-news-detection
+it is a collab notebook in the fake news folder named FAKE_NEWS_DETECTION.ipynb 
 
-# Create and activate virtual environment
-# For macOS/Linux
-python3 -m venv venv
-source venv/bin/activate
+run all the cells
+ a quick Tunnel has been created for the gui , where you can check if the news is real or fake 
 
-# For Windows
-python -m venv venv
-venv\Scripts\activate
+ refer the pdf the repo for detailed overview 
 
-#  Install dependencies
-pip install -r requirements.txt
 
-#  (Mac Users Only) – Fix SSL / NLTK download issues
-python3
-import ssl
-import nltk
 
-try:
-    _create_unverified_https_context = ssl._create_unverified_context
-except AttributeError:
-    pass
-else:
-    ssl._create_default_https_context = _create_unverified_https_context
-
-nltk.download('stopwords')
-nltk.download('wordnet')
-nltk.download('omw-1.4')
-```
-EXIT THE SHELL AFTER DOWNLOADING
-RUN THE PROJECT USING python main.py
